@@ -15,6 +15,9 @@ class Env:
     def update_obs(self, obs):
         self.obs = obs
 
+    
+
+
     def obs_map(self):
         """
         Initialize obstacles' positions
@@ -34,7 +37,25 @@ class Env:
             obs.add((0, i))
         for i in range(y):
             obs.add((x - 1, i))
+        
+        def add_obs(ax, ay, bx, by):
+            for i in range (ay, by):
+                obs.add((ax, i))
+            for i in range (ay, by):
+                obs.add((bx, i))
+            for i in range (ax, bx):
+                obs.add((i, ay))
+            for i in range (ax, bx+1):
+                obs.add((i, by))
+        
+        add_obs(10, 10, 21, 21)
+        add_obs(27, 24, 35, 29)
+        add_obs(30, 7, 35, 12)
+ 
 
+            
+        return obs
+'''
         for i in range(10, 21):
             obs.add((i, 15))
         for i in range(15):
@@ -44,5 +65,5 @@ class Env:
             obs.add((30, i))
         for i in range(16):
             obs.add((40, i))
+'''
 
-        return obs
