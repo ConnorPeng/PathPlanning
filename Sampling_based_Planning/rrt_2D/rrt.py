@@ -98,10 +98,10 @@ class Rrt:
 
 
 def main():
-    x_start = (2, 2)  # Starting node
-    x_goal = (49, 24)  # Goal node
+    x_start = (50, 50)  # Starting node
+    x_goal = (400, 400)  # Goal node
 
-    rrt = Rrt(x_start, x_goal, 0.5, 0.05, 10000)
+    rrt = Rrt(x_start, x_goal, 10, 0.001, 100000)
     path = rrt.planning()
 
     if path:
